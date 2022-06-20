@@ -1,8 +1,9 @@
-const { Servicio } = require('../Services')
-function Adaptador({color, info}) {
-    const result = Servicio({color, info})
-    
-    return result;
+const {Servicio} = require('../Services')
+
+function Adaptador ({info, color}) {
+    const result = Servicio({info, color})
+
+    return result
 }
 
-module.exports = { Adaptador }
+module.exports = {Adaptador}

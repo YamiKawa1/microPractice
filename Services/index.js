@@ -1,31 +1,13 @@
-const {PersonalData, PersonalColor} = require('../Controllers')
-function Servicio({color, info}) {
+const {PersonalData, PreferenceColor} = require('../Controllers')
 
-    var personalData = PersonalData({info});
-    var personalColor = PersonalColor({color});
+function Servicio ({info, color}) {
 
-    if (personalData.info.edad > 18) {
-        personalColor = 'azul'
-    }
+    const personalData = PersonalData({info});
 
-    switch (personalData.info.editor) {
-        case "vs":
-            console.log("You really love visual studio");
-            break;
+    const preferenceColor = PreferenceColor({color});
 
-        case "atom":
-            console.log("You really love visual studio");
-            break;
 
-        case "block de notas":
-            console.log("you really love do things the hard way");
-            break;
-    }
-
-    // console.log(personal, color);
-
-    return {personalData, personalColor}
-
+    return {personalData, preferenceColor}
 }
 
-module.exports = { Servicio }
+module.exports = {Servicio}
